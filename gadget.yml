@@ -1,0 +1,31 @@
+spec: "0.0"
+name: claptto
+uuid: d91f538e-ada5-434c-840b-2dd5f539d073
+type: docker
+rootfs:
+  from: chippro
+  hash: nextthingco/gadget-build-chippro-unstable:2017-08-14-af8c406c
+onboot: []
+services:
+- name: gifserver
+  uuid: f0698b4f-f78b-46bf-aac7-b24d3c00cf3e
+  image: xtacocorex/chiptainer_gifserver
+  directory: ""
+  net: host
+  readonly: false
+  forking: false
+  command: []
+  binds: ['/data/pictures:/data/pictures']
+  capabilities: []
+  devices: []
+- name: claptto
+  uuid: 8bcfe3ab-cd33-4fe5-b8d5-706285f0574f
+  image: xtacocorex/chiptainer_claptto
+  directory: ""
+  net: ""
+  readonly: false
+  forking: false
+  command: []
+  binds: ['/sys:/sys', '/data/pictures:/data/pictures', '/dev/snd:/dev/snd']
+  capabilities: [SYS_RAWIO]
+  devices: [/dev/mem, /dev/video0, /dev/snd]
