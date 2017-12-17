@@ -9,8 +9,8 @@ onboot: []
 services:
 - name: gifserver
   uuid: f0698b4f-f78b-46bf-aac7-b24d3c00cf3e
-  image: xtacocorex/chiptainer_gifserver
-  directory: ""
+  image: ""
+  directory: "gifserver/"
   net: host
   readonly: false
   forking: false
@@ -20,8 +20,8 @@ services:
   devices: []
 - name: claptto
   uuid: 8bcfe3ab-cd33-4fe5-b8d5-706285f0574f
-  image: xtacocorex/chiptainer_claptto
-  directory: ""
+  image: ""
+  directory: "claptto"
   net: ""
   readonly: false
   forking: false
